@@ -17,4 +17,5 @@ RUN bundle install
 EXPOSE 3000
 
 # สั่งให้ Rails รันเมื่อคอนเทนเนอร์เริ่มทำงาน
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "3000"]
+

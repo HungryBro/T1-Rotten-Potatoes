@@ -1,31 +1,28 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
+# สำหรับ Development (ใช้ SQLite3 ในเครื่องพัฒนา)
 development:
   adapter: sqlite3
   database: db/development.sqlite3
   pool: 5
   timeout: 5000
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test: &test
+# สำหรับ Test (ใช้ SQLite3 เช่นเดียวกับใน development)
+test:
   adapter: sqlite3
   database: db/test.sqlite3
   pool: 5
   timeout: 5000
 
+# สำหรับ Production (ใช้ PostgreSQL บน Render)
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
   pool: 5
   timeout: 5000
 
-cucumber:
-  <<: *test
-
+# สำหรับ Cucumber (ใช้ฐานข้อมูลแบบเดียวกับ Test)
 cucumber:
   <<: *test
