@@ -164,6 +164,7 @@ GEM
     rack (1.6.13)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-timeout (0.6.3)
     rails (4.2.11)
       actionmailer (= 4.2.11)
       actionpack (= 4.2.11)
@@ -183,11 +184,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.5)
-    rails_stdout_logging (0.0.5)
     railties (4.2.11)
       actionpack (= 4.2.11)
       activesupport (= 4.2.11)
@@ -234,7 +230,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.13)
+    sqlite3 (1.4.4)
     sys-uname (1.3.1)
       ffi (~> 1.1)
     thor (1.3.2)
@@ -263,15 +259,15 @@ DEPENDENCIES
   database_cleaner
   dotenv-rails
   jquery-rails
-  pg (~> 1.2)
+  pg (~> 1.5)
   pry
   pry-byebug
   puma
+  rack-timeout (~> 0.6.0)
   rails (= 4.2.11)
-  rails_12factor
   rspec-rails
   sass-rails (~> 5.0.3)
-  sqlite3 (~> 1.3.6)
+  sqlite3 (~> 1.4.2)
   uglifier (>= 2.7.1)
   web-console (~> 2.0)
 

@@ -7,8 +7,8 @@ gem 'sass-rails', '~> 5.0.3'
 gem 'uglifier', '>= 2.7.1'
 gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
-
 gem 'puma' # ใช้ Puma เป็น Web Server
+gem 'pg', '~> 1.5' # PostgreSQL ใช้ได้ทุก environment
 
 group :development, :test do
   gem 'byebug'
@@ -22,7 +22,7 @@ group :development, :test do
   gem 'dotenv-rails'
 
   # ใช้ sqlite3 เฉพาะ development & test เท่านั้น
-  gem 'sqlite3', '~> 1.3.6'
+  gem 'sqlite3', '~> 1.4.2'
 end
 
 group :development do
@@ -31,6 +31,5 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 1.2' # ใช้ PostgreSQL สำหรับ Production
-  gem 'rails_12factor' # สำหรับการ Deploy บน Cloud เช่น Railway, Heroku
+  gem 'rack-timeout', '~> 0.6.0' # ป้องกัน request timeout
 end

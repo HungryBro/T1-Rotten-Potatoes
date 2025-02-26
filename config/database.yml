@@ -13,10 +13,8 @@ test: &test
 
 # Production (ใช้ PostgreSQL สำหรับ Deploy บน Cloud)
 production:
-  url: <%= ENV['DATABASE_URL'] %>
   adapter: postgresql
   encoding: unicode
-  database: rotten_potatoes_production
   pool: 5
   username: <%= ENV['DATABASE_USER'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
