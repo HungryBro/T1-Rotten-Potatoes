@@ -5,7 +5,6 @@ gem 'rails', '4.2.11'
 
 gem 'sass-rails', '~> 5.0.3'
 gem 'uglifier', '>= 2.7.1'
-
 gem 'jquery-rails'
 
 gem 'bcrypt', '~> 3.1.7'
@@ -27,11 +26,11 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
 
-  # Use sqlite3 as the database for Active Record
+  # ใช้ sqlite3 เฉพาะ development & test เท่านั้น
   gem 'sqlite3', '~> 1.3.6'
 end
 
 group :production do
-  gem 'pg', '~> 0.2'
-  gem 'rails_12factor'
+  gem 'pg', '~> 1.2' # ใช้ PostgreSQL สำหรับ Production
+  gem 'puma' # ใช้ Puma สำหรับ Web Server
 end
