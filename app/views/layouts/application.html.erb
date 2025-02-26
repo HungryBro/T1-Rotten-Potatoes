@@ -1,0 +1,44 @@
+<%# Our "base" layout should be a valid HTML document. %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rotten Potatoes!</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  
+  <%= stylesheet_link_tag 'application', 'media' => 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+  <body>
+    <%# These classes come from the Bootstrap CSS framework. %>
+    <nav class="navbar navbar-expand-lg bg-primary text-white mb-3">
+      <div class="container">
+        <h1 class="title">Rotten Potatoes!</h1>
+
+        <%# ลิงก์ล็อกอิน / ล็อกเอาต์ / สมัครสมาชิก %>
+        <div class="ml-auto">
+          <% if logged_in? %>
+            <span class="mr-2">Welcome, <%= current_user.email %>!</span>
+            <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-light" %>
+          <% else %>
+            <%= link_to "Login", login_path, class: "btn btn-light mr-2" %>
+            <%= link_to "Sign Up", signup_path, class: "btn btn-light mr-2" %>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%# Render "flash" messages in our application. This loads _flash.erb %>
+      <%= render 'layouts/flash' %>
+      <main id="main">
+        <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>
