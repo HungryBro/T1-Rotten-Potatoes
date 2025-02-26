@@ -10,6 +10,8 @@ gem 'jquery-rails'
 
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'puma' # ใช้ Puma Web Server
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
